@@ -18,7 +18,7 @@ Follow these steps to get your dApp up and running:
 
 2. **Install Dependencies**: Navigate to the project directory and install the necessary dependencies by running `npm install` or `yarn install`.
 
-3. **Configure Wagmi**: In the `src/contexts` directory, you'll find a `WagmiProvider.tsx` file where you can configure your Ethereum provider and network settings.
+3. **Configure Wagmi**: In the `src/contexts` directory, you'll find a `WagmiProvider.tsx` file where you can configure your Ethereum provider and network settings. The Infura API key is an example key and it is not valid.
 
 4. **Develop Locally**: Run `npm run dev` or `yarn dev` to start the development server. This will launch your dApp in your default web browser. Any changes you make to the code will trigger live updates thanks to Vite's HMR.
 
