@@ -27,8 +27,6 @@ const Index = () => {
     }
 
     getBooks(bookLibrary, bookKeys).then((books: IBook[]) => {
-      console.log(books);
-
       setBooks(books);
     });
   }, [bookKeys]);

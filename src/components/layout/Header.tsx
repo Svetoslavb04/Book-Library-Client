@@ -5,6 +5,8 @@ import { sepolia } from 'wagmi/chains';
 import { truncate } from '../../utils';
 import { sha256 } from 'ethers';
 
+import { Link } from 'react-router-dom';
+
 function Header() {
   const connector = new MetaMaskConnector({
     chains: [sepolia],
@@ -31,12 +33,12 @@ function Header() {
     <div className="header-wrapper">
       <div className="header">
         <div className="container d-flex justify-content-between align-item-center">
-          <a href="/">
+          <Link to="/">
             <img
               src="https://limeacademy.tech/wp-content/uploads/2021/08/limeacademy_logo.svg"
               alt=""
             />
-          </a>
+          </Link>
           <div className="d-flex">
             {isLoading ? (
               <span>Loading...</span>

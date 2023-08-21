@@ -4,6 +4,7 @@ import { WalletProvider } from '../contexts/WalletContext';
 
 import Header from './layout/Header';
 import Footer from './layout/Footer';
+import Navigation from './layout/Navigation';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <div className="application">
             <Header />
             <main>
+              <Navigation />
               <Outlet />
             </main>
             <Footer />

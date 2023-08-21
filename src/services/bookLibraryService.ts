@@ -23,10 +23,11 @@ export const getBooks = async (bookLibrary: ethers.Contract, bookKeys?: string[]
     bookKeys = await getBookKeys(bookLibrary);
   }
 
+  bookKeys = Array.from(new Set(bookKeys));
+
   for (let i = 0; i < bookKeys.length; i++) {
     const bookKey = bookKeys[i];
     const book = await bookLibrary.books(bookKey);
-    console.log(book);
 
     const borrowers = await bookLibrary.getBorrowers(bookKey);
 
@@ -34,9 +35,21 @@ export const getBooks = async (bookLibrary: ethers.Contract, bookKeys?: string[]
       key: bookKey,
       title: book[0],
       copies: Number(book[1]),
-      borrowers,
+      borrowers: Array.from(new Set(borrowers)),
     });
   }
 
   return books;
+};
+
+export const addBook = async (bookLibrary: ethers.Contract, title: string, copies: number) => {
+  return await bookLibrary.addBook(title, copies);
+};
+
+export const borrowBook = async (bookLibrary: ethers.Contract, bookKey: string) => {
+  return await bookLibrary.borrowBook(bookKey);
+};
+
+export const returnBook = async (bookLibrary: ethers.Contract, bookKey: string) => {
+  return await bookLibrary.returnBook(bookKey);
 };
